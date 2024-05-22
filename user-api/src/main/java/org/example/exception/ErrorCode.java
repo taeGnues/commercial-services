@@ -6,7 +6,7 @@ import org.springframework.http.HttpStatus;
 
 @RequiredArgsConstructor
 @Getter
-public enum ErroCode {
+public enum ErrorCode {
     ALREADY_REGISTER_USER(HttpStatus.BAD_REQUEST, "이미 가입된 회원입니다."), // 에러 코드 기반의 exception 생성
     NOT_FOUND_USER(HttpStatus.BAD_REQUEST, "일치하는 회원이 없습니다."),
     ALREADY_VERIFY(HttpStatus.BAD_REQUEST, "이미 인증이 완료되었습니다."),

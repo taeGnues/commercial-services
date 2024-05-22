@@ -1,11 +1,11 @@
-package org.example.service;
+package org.example.service.customer;
 
 import lombok.RequiredArgsConstructor;
 import org.example.domain.SignUpForm;
 import org.example.domain.model.Customer;
 import org.example.domain.repository.CustomerRepository;
 import org.example.exception.CustomException;
-import org.example.exception.ErroCode;
+import org.example.exception.ErrorCode;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -43,20 +43,20 @@ public class SignUpCustomerService {
             // 변경감지로 자동으로 저장됨.
             return customer.getVerifyExpiredAt();
         }
-        throw new CustomException(ErroCode.NOT_FOUND_USER);
+        throw new CustomException(ErrorCode.NOT_FOUND_USER);
     }
 
     @Transactional
     public void verifyEmail(String email, String code){
         Customer customer = customerRepository.findByEmail(email)
-                .orElseThrow(()->new CustomException(ErroCode.NOT_FOUND_USER));
+                .orElseThrow(()->new CustomException(ErrorCode.NOT_FOUND_USER));
 
         if(customer.isVerify()){
-            throw new CustomException(ErroCode.ALREADY_VERIFY);
+            throw new CustomException(ErrorCode.ALREADY_VERIFY);
         }else if(!customer.getVerificationCode().equals(code)){ // 인증 code가 다르면
-            throw new CustomException(ErroCode.WRONG_VERIFICATION);
+            throw new CustomException(ErrorCode.WRONG_VERIFICATION);
         }else if(customer.getVerifyExpiredAt().isBefore(LocalDateTime.now())){ // 인증 시간이 지난 경우
-            throw new CustomException(ErroCode.EXPIRED_CODE);
+            throw new CustomException(ErrorCode.EXPIRED_CODE);
         }
 
         customer.setVerify(true);

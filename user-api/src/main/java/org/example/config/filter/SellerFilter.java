@@ -4,17 +4,18 @@ import lombok.RequiredArgsConstructor;
 import org.example.config.JwtAuthenticationProvider;
 import org.example.domain.common.UserVo;
 import org.example.service.customer.CustomerService;
+import org.example.service.seller.SellerService;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
-@WebFilter(urlPatterns = "/customer/*")
+@WebFilter(urlPatterns = "/seller/*")
 @RequiredArgsConstructor
-public class CustomerFilter implements Filter {
+public class SellerFilter implements Filter {
     private final JwtAuthenticationProvider jwtAuthenticationProvider;
-    private final CustomerService customerService;
+    private final SellerService sellerService;
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
@@ -25,7 +26,7 @@ public class CustomerFilter implements Filter {
         }
 
         UserVo vo = jwtAuthenticationProvider.getUserVo(token);
-        customerService.findByIdAndEmail(vo.getId(), vo.getEmail()).orElseThrow(
+        sellerService.findByIdAndEmail(vo.getId(), vo.getEmail()).orElseThrow(
                 ()->new ServletException("Invalid Access")
         ); // 토큰이 제대로된 토큰인지 확인 (id와 email를 통해)
 
