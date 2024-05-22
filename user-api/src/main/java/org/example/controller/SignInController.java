@@ -20,4 +20,10 @@ public class SignInController {
         // 토큰 발행.
         return ResponseEntity.ok(signInApplication.customerLoginToken(form));
     }
+
+    @PostMapping("/seller")
+    public ResponseEntity<String> signInSeller(@RequestBody SignInForm form){
+        // 토큰 발행.
+        return ResponseEntity.ok(signInApplication.sellerLoginToken(form));
+    }
 }

@@ -1,4 +1,4 @@
-package org.example.service;
+package org.example.service.customer;
 
 import lombok.RequiredArgsConstructor;
 import org.example.domain.model.Customer;
