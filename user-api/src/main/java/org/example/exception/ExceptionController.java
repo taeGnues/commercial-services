@@ -9,6 +9,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
+import javax.servlet.ServletException;
+
 @ControllerAdvice
 @Slf4j
 public class ExceptionController {
@@ -21,7 +23,6 @@ public class ExceptionController {
         return ResponseEntity.badRequest().body(new ExceptionResponse(c.getMessage(), c.getErrorCode()));
 
     }
-
 
     @Getter
     @ToString
