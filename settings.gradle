@@ -1,4 +1,5 @@
 rootProject.name = 'commercial-services'
 include 'user-api'
 include 'user-api'
+include 'zerobase-domain'
 
