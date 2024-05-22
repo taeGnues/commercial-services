@@ -1,5 +1,6 @@
 package org.example.client.service.test;
 
+import org.example.service.SignUpCustomerService;
 import org.example.domain.SignUpForm;
 import org.example.domain.model.Customer;
 import org.junit.jupiter.api.Test;
