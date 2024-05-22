@@ -1,0 +1,40 @@
+### 회원가입 (고객)
+POST http://localhost:8081/signup/customer
+Content-Type: application/json
+
+{
+  "birth": "2000-02-25",
+  "email": "hi563@naver.com",
+  "name": "Jeong Tae Seung",
+  "password": "1234",
+  "phone": "01012345678"
+}
+
+### 이메일 인증
+http://localhost:8081/signup/customer/verify?email=hi563@naver.com&code=i1jGjSDNpC
+
+### 로그인 (고객)
+POST http://localhost:8081/signIn/customer
+Content-Type: application/json
+
+{
+  "email": "hi563@naver.com",
+  "password": "1234"
+}
+
+### 회원 정보 조회 (고객)
+GET http://localhost:8081/customer/getInfo
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIwUitpcTFsNTNwV2hQalFoT3F0UTFnPT0iLCJqdGkiOiJDbVlEdjVNSzVZVXlpazhLR05Ed293PT0iLCJyb2xlcyI6IkNVU1RPTUVSIiwiaWF0IjoxNzE2MzgzNjQxLCJleHAiOjE3MTY0NzAwNDF9.XqGzHLftIcUgw1Eb6HrgHeWc9OB47YUKrwpiWIrcE8A
+
+
+### 잔액 변경 (고객)
+POST http://localhost:8081/customer/balance
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIwUitpcTFsNTNwV2hQalFoT3F0UTFnPT0iLCJqdGkiOiJDbVlEdjVNSzVZVXlpazhLR05Ed293PT0iLCJyb2xlcyI6IkNVU1RPTUVSIiwiaWF0IjoxNzE2MzgzNjQxLCJleHAiOjE3MTY0NzAwNDF9.XqGzHLftIcUgw1Eb6HrgHeWc9OB47YUKrwpiWIrcE8A
+
+{
+  "from": "hi563@g.skku.edu",
+  "message": "pw",
+  "money": 5000
+}
