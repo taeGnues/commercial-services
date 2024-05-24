@@ -85,3 +85,7 @@ X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIwUitpcTFsNTNwV2hQalFoT3F0UTFnPT0iL
   "price": 5000,
   "productId": 1
 }
+
+### 상품 삭제 (셀러)
+DELETE http://localhost:8082/seller/product?productId=2
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIwUitpcTFsNTNwV2hQalFoT3F0UTFnPT0iLCJqdGkiOiJDbVlEdjVNSzVZVXlpazhLR05Ed293PT0iLCJyb2xlcyI6IlNFTExFUiIsImlhdCI6MTcxNjU1MDA0OSwiZXhwIjoxNzE2NjM2NDQ5fQ.u9ZVAqb9VzPi5fhXtPHGN8Ln8UC5Ipz5ouqaVK69n4A

@@ -22,7 +22,7 @@ public class ProductItemService {
 
     @Transactional
     public Product addProductItem(Long sellerId, AddProductItemForm form){
-        Product product = productRepository.findBySellerIdAndId(sellerId, form.getProductId())
+        Product product = productRepository.findByIdAndSellerId(form.getProductId(), sellerId)
                 .orElseThrow(() -> new CustomException(NOT_FOUND_PRODUCT));
 
         if(product.getProductItems().stream()
