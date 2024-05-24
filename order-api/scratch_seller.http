@@ -1,0 +1,44 @@
+### 상품 등록 (셀러)
+POST http://localhost:8082/seller/product
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIwUitpcTFsNTNwV2hQalFoT3F0UTFnPT0iLCJqdGkiOiJDbVlEdjVNSzVZVXlpazhLR05Ed293PT0iLCJyb2xlcyI6IlNFTExFUiIsImlhdCI6MTcxNjU1MDA0OSwiZXhwIjoxNzE2NjM2NDQ5fQ.u9ZVAqb9VzPi5fhXtPHGN8Ln8UC5Ipz5ouqaVK69n4A
+
+
+{
+  "addProductItemForms": [
+    {
+      "count": 3,
+      "name": "에어포스 그린",
+      "price": 1000
+    },
+    {
+      "count": 3,
+      "name": "에어포스 레드",
+      "price": 1500
+    },
+    {
+      "count": 2,
+      "name": "에어포스 블루",
+      "price": 1000
+    }
+  ],
+  "description": "신발 입니다.",
+  "name": "나이키 에어포스"
+}
+
+### 상품 항목(Product Item) 조회
+GET http://localhost:8082/seller/product/item?id=1
+
+
+### 상품 항목(Product Item) 등록 (셀러)
+POST http://localhost:8082/seller/product/item
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIwUitpcTFsNTNwV2hQalFoT3F0UTFnPT0iLCJqdGkiOiJDbVlEdjVNSzVZVXlpazhLR05Ed293PT0iLCJyb2xlcyI6IlNFTExFUiIsImlhdCI6MTcxNjU1MDA0OSwiZXhwIjoxNzE2NjM2NDQ5fQ.u9ZVAqb9VzPi5fhXtPHGN8Ln8UC5Ipz5ouqaVK69n4A
+
+
+{
+  "count": 1,
+  "name": "에어포스 된장",
+  "price": 5000,
+  "productId": 1
+}
