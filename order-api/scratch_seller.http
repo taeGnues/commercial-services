@@ -42,3 +42,46 @@ X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIwUitpcTFsNTNwV2hQalFoT3F0UTFnPT0iL
   "price": 5000,
   "productId": 1
 }
+
+### 상품 수정 (셀러)
+PUT http://localhost:8082/seller/product
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIwUitpcTFsNTNwV2hQalFoT3F0UTFnPT0iLCJqdGkiOiJDbVlEdjVNSzVZVXlpazhLR05Ed293PT0iLCJyb2xlcyI6IlNFTExFUiIsImlhdCI6MTcxNjU1MDA0OSwiZXhwIjoxNzE2NjM2NDQ5fQ.u9ZVAqb9VzPi5fhXtPHGN8Ln8UC5Ipz5ouqaVK69n4A
+
+
+{
+  "description": "백팩 입니다.",
+  "id": 1,
+  "items": [
+    {
+      "count": 3,
+      "id": 2,
+      "name": "잔스포츠 마끼야또",
+      "price": 1000,
+      "productId": 1
+    },
+    {
+      "count": 3,
+      "id": 4,
+      "name": "잔스포츠 돌체",
+      "price": 1000,
+      "productId": 1
+    }
+  ],
+  "name": "잔스포츠",
+  "productId": 1
+}
+
+### 상품 항목(Product Item) 수정 (셀러)
+PUT http://localhost:8082/seller/product/item
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIwUitpcTFsNTNwV2hQalFoT3F0UTFnPT0iLCJqdGkiOiJDbVlEdjVNSzVZVXlpazhLR05Ed293PT0iLCJyb2xlcyI6IlNFTExFUiIsImlhdCI6MTcxNjU1MDA0OSwiZXhwIjoxNzE2NjM2NDQ5fQ.u9ZVAqb9VzPi5fhXtPHGN8Ln8UC5Ipz5ouqaVK69n4A
+
+
+{
+  "id": 1,
+  "count": 1,
+  "name": "잔스포츠 된장",
+  "price": 5000,
+  "productId": 1
+}
