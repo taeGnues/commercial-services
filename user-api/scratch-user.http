@@ -38,3 +38,31 @@ X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIwUitpcTFsNTNwV2hQalFoT3F0UTFnPT0iL
   "message": "pw",
   "money": 5000
 }
+
+
+### 회원가입 (셀러)
+POST http://localhost:8081/signup/seller
+Content-Type: application/json
+
+{
+  "birth": "2000-02-25",
+  "email": "hi563@naver.com",
+  "name": "Seller",
+  "password": "1234",
+  "phone": "01012345678"
+}
+
+### 이메일 인증 (셀러)
+http://localhost:8081/signup/seller/verify?email=hi563@naver.com&code=i1jGjSDNpC
+
+### 로그인 (셀러)
+POST http://localhost:8081/signIn/seller
+Content-Type: application/json
+
+{
+  "email": "hi563@naver.com",
+  "password": "1234"
+}
+
+
+
