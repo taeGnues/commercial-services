@@ -20,8 +20,9 @@ public class CustomerBalanceHistory extends BaseEntity{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne(targetEntity = Customer.class, fetch = FetchType.LAZY)
-    private Customer customer;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "CUSTOMER_ID")
+    private Customer customer; // 다대일 단방향
 
     private Integer changeMoney;
 
