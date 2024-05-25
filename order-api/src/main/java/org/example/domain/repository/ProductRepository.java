@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
-public interface ProductRepository extends JpaRepository<Product, Long> {
+public interface ProductRepository extends JpaRepository<Product, Long>, ProductRepositoryCustom{
 
 //    @Query("select p from Product p left join fetch p.productItems") // item값들 즉시 로드해오기.
     @EntityGraph(attributePaths = {"productItems"})
@@ -16,4 +16,6 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
 
     @EntityGraph(attributePaths = {"productItems"})
     Optional<Product> findByIdAndSellerId(Long id, Long sellerId);
+
+
 }
