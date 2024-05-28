@@ -164,5 +164,14 @@ public class CartApplication {
 
     }
 
-
+    /*
+     * 엣지 케이스
+     */
+    public Cart updateCart(Long id, Cart cart) {
+        // 실질적으로 변하는 데이터
+        // 상품의 삭제, 수량 변경
+        // refresh cart에 녹아있음.
+        cartService.putCart(id, cart);
+        return getCart(id);
+    } // 장바구니에서 가격이 변동될까?
 }
