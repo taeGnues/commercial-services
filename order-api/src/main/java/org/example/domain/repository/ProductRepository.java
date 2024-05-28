@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface ProductRepository extends JpaRepository<Product, Long>, ProductRepositoryCustom{
@@ -16,6 +17,9 @@ public interface ProductRepository extends JpaRepository<Product, Long>, Product
 
     @EntityGraph(attributePaths = {"productItems"})
     Optional<Product> findByIdAndSellerId(Long id, Long sellerId);
+
+    @EntityGraph(attributePaths = {"productItems"}, type = EntityGraph.EntityGraphType.LOAD)
+    List<Product> findAllByIdIn(List<Long> ids);
 
 
 }
