@@ -26,6 +26,7 @@ public class CartApplication {
     // 2. 상품의 가격이나 수량이 변동된다. ~> 처리 필요
     public Cart getCart(Long customerId) {
         Cart cart = refreshCart(cartService.getCart(customerId));
+        cartService.putCart(cart.getCustomerId(), cart);
 
         // 반환할 Cart
         Cart retunrCart = new Cart();
@@ -41,7 +42,7 @@ public class CartApplication {
 
         // 2. 메세지를 보고 난 다음에는 이미 본 메세지는 스팸이 되기 때문에 제거한다.
     }
-    private Cart refreshCart(Cart cart){
+    protected Cart refreshCart(Cart cart){ // 같은 패키지 레벨에서 ok
         // 1. 상품이나 상품의 아이템의 정보, 가격, 수량이 변동되었는지 체크하고 그에 맞는 알람을 제공한다.
         // 2. 상품의 수량, 가격을 우리가 임의로 변경한다.
 
@@ -122,7 +123,6 @@ public class CartApplication {
             }
 
         }
-        cartService.putCart(cart.getCustomerId(), cart);
         return cart;
     }
 
