@@ -18,11 +18,19 @@ import java.util.stream.Collectors;
 public class CartService {
     private final RedisClient redisClient;
 
+    // Cart 내용 다 가져오기
     public Cart getCart(Long customerId){
-        return redisClient.get(customerId, Cart.class);
+        Cart cart = redisClient.get(customerId, Cart.class);
+        return cart != null ? cart : new Cart();
     }
 
-    // Cart에 대한 추가.
+    // Cart에 항목 추가
+    public Cart putCart(Long customerId, Cart cart) {
+        redisClient.put(customerId, cart);
+        return cart;
+    }
+
+    // Cart를 추가.
     public Cart addCart(Long customerId, AddProductCartForm form){
         Cart cart = redisClient.get(customerId, Cart.class);
 
@@ -84,4 +92,6 @@ public class CartService {
         redisClient.put(customerId, cart);
         return cart;
     }
+
+
 }
