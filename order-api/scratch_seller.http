@@ -1,9 +1,7 @@
 ### 상품 등록 (셀러)
 POST http://localhost:8082/seller/product
 Content-Type: application/json
-X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIwUitpcTFsNTNwV2hQalFoT3F0UTFnPT0iLCJqdGkiOiJDbVlEdjVNSzVZVXlpazhLR05Ed293PT0iLCJyb2xlcyI6IlNFTExFUiIsImlhdCI6MTcxNjY0NDY4MCwiZXhwIjoxNzE2NzMxMDgwfQ.n0Wg5fLEhes5xKIp85T_lzu7NdYAMDDoBgUUPXwkFHM
-
-
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIwUitpcTFsNTNwV2hQalFoT3F0UTFnPT0iLCJqdGkiOiJDbVlEdjVNSzVZVXlpazhLR05Ed293PT0iLCJyb2xlcyI6IlNFTExFUiIsImlhdCI6MTcxNjg3MzUxNiwiZXhwIjoxNzE2OTU5OTE2fQ.lBhrELqIdhmo4y8qvNmVnrtaFuJi9v7zDGf5uYBaM7Y
 
 {
   "addProductItemForms": [
@@ -99,3 +97,23 @@ Content-Type: application/json
 ### 상품 상세 검색
 GET http://localhost:8082/search/product/detail?productId=1
 Content-Type: application/json
+
+### 장바구니 상품 추가 (고객)
+POST http://localhost:8082/customer/cart
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIwUitpcTFsNTNwV2hQalFoT3F0UTFnPT0iLCJqdGkiOiJDbVlEdjVNSzVZVXlpazhLR05Ed293PT0iLCJyb2xlcyI6IkNVU1RPTUVSIiwiaWF0IjoxNzE2ODczNDgxLCJleHAiOjE3MTY5NTk4ODF9.JQRvnUJZnjd3c31vUnr8n6CNXkggeoWmkT_X2YAZbFY
+
+{
+  "description": "신발 입니다.",
+  "items": [
+    {
+      "count": 4,
+      "id": 1,
+      "name": "에어포스 그린",
+      "price": 1000
+    }
+  ],
+  "name": "나이키 에어포스",
+  "productId": 1,
+  "sellerId": 1
+}
