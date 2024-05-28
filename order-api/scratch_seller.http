@@ -26,7 +26,7 @@ X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIwUitpcTFsNTNwV2hQalFoT3F0UTFnPT0iL
 }
 
 ### 상품 항목(Product Item) 조회
-GET http://localhost:8082/seller/product/item?id=1
+GET http://localhost:8082/seller/product/item?id=2
 
 
 ### 상품 항목(Product Item) 등록 (셀러)
@@ -107,7 +107,7 @@ X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIwUitpcTFsNTNwV2hQalFoT3F0UTFnPT0iL
   "description": "신발 입니다.",
   "items": [
     {
-      "count": 4,
+      "count": 1,
       "id": 1,
       "name": "에어포스 그린",
       "price": 1000
@@ -117,3 +117,9 @@ X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIwUitpcTFsNTNwV2hQalFoT3F0UTFnPT0iL
   "productId": 1,
   "sellerId": 1
 }
+
+### 장바구니 확인
+GET http://localhost:8082/customer/cart
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIwUitpcTFsNTNwV2hQalFoT3F0UTFnPT0iLCJqdGkiOiJDbVlEdjVNSzVZVXlpazhLR05Ed293PT0iLCJyb2xlcyI6IkNVU1RPTUVSIiwiaWF0IjoxNzE2ODczNDgxLCJleHAiOjE3MTY5NTk4ODF9.JQRvnUJZnjd3c31vUnr8n6CNXkggeoWmkT_X2YAZbFY
+

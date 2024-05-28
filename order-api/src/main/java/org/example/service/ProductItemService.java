@@ -20,6 +20,14 @@ public class ProductItemService {
     private final ProductRepository productRepository;
     private final ProductItemRepository productItemRepository;
 
+    public ProductItem getProductItem(Long id){
+        return productItemRepository.getById(id);
+    }
+
+    public ProductItem saveProductItem(ProductItem productItem){
+        return productItemRepository.save(productItem);
+    }
+
     @Transactional
     public Product addProductItem(Long sellerId, AddProductItemForm form){
         Product product = productRepository.findByIdAndSellerId(form.getProductId(), sellerId)
